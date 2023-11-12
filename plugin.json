@@ -3,7 +3,6 @@
   "name": "OpenID Connect Plugin for NodeBB",
   "description": "Authenticate to FusionAuth or any OpenID Connect identity provider.",
   "url": "https://github.com/FusionAuth/nodebb-plugin-fusionauth-oidc",
-  "library": "./library.js",
   "templates": "templates",
   "hooks": [
     {
@@ -35,7 +34,11 @@
       "method": "redirectLogout"
     }
   ],
-  "acpScripts": [
-    "static/lib/admin.js"
-  ]
+  "nbbpm": {
+    "compatibility": "^2.0.0"
+  },
+  "acpScripts": [],
+  "modules": {
+    "../admin/plugins/fusionauth-oidc.js": "static/lib/admin.js"
+  }
 }
